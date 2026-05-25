@@ -2,7 +2,7 @@
 
 [![release](https://img.shields.io/github/v/release/lintuxt/displayswitcher?label=release&color=blue)](https://github.com/lintuxt/displayswitcher/releases)
 [![CI](https://github.com/lintuxt/displayswitcher/actions/workflows/ci.yml/badge.svg)](https://github.com/lintuxt/displayswitcher/actions/workflows/ci.yml)
-[![license](https://img.shields.io/badge/license-MIT-blue)](https://github.com/lintuxt/displayswitcher/blob/main/LICENSE)
+[![license](https://img.shields.io/badge/license-MIT-blue)](https://github.com/lintuxt/displayswitcher/blob/trunk/LICENSE)
 
 ## Install
 
@@ -44,7 +44,7 @@ swift build -c release
 
 ## License
 
-MIT — see [LICENSE](https://github.com/lintuxt/displayswitcher/blob/main/LICENSE).
+MIT — see [LICENSE](https://github.com/lintuxt/displayswitcher/blob/trunk/LICENSE).
 
 ## Sponsor
 
