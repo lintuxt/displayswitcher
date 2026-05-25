@@ -1,0 +1,18 @@
+.DS_Store
+.build/
+.swiftpm/
+Packages/
+dist/
+
+# Stray Swift incremental-build artifacts.
+*.o
+*.d
+*.swiftdeps
+*.swiftdeps~
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+DerivedData/
+Package.resolved
+
+# Per-user Claude Code config — shared settings/agents/hooks are OK to commit.
+.claude/settings.local.json
