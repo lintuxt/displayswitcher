@@ -7,7 +7,7 @@
 ## Install
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/lintuxt/displayswitcher/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/lintuxt/displayswitcher/trunk/install.sh | sh
 ```
 
 Downloads the latest release for Apple Silicon, verifies its SHA-256 checksum, and installs to `~/.local/bin` (or `/usr/local/bin`).
