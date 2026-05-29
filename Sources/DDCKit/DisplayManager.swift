@@ -14,6 +14,9 @@ public enum DisplayManager {
 
     /// Returns every controllable external display, ordered by `id` (1-based).
     public static func displays() throws -> [Display] {
+        if let demo = ProcessInfo.processInfo.environment["LINTUXT_DEBUG"], !demo.isEmpty {
+            return demoDisplays()
+        }
         guard ds_ioav_available() != 0 else {
             throw DDCError.ioavServiceUnavailable
         }
@@ -71,5 +74,28 @@ public enum DisplayManager {
         return NSScreen.screens.first {
             ($0.deviceDescription[screenNumberKey] as? CGDirectDisplayID) == displayID
         }?.localizedName
+    }
+
+    /// A deterministic three-display scene used only to regenerate the
+    /// lintuxt.ai terminal mock. Gated behind the hidden LINTUXT_DEBUG env
+    /// var; deliberately undocumented and never a public flag.
+    private static func demoDisplays() -> [Display] {
+        let readings: [VCPCode: VCPReading] = [
+            .brightness: VCPReading(current: 25, maximum: 100),
+            .contrast: VCPReading(current: 50, maximum: 100),
+            .inputSource: VCPReading(current: UInt16(InputSource.hdmi1.rawValue),
+                                     maximum: UInt16(InputSource.hdmi1.rawValue)),
+        ]
+        func make(id: Int, originX: Int) -> Display {
+            Display(id: id, name: "DELL U2715H",
+                    geometry: DisplayGeometry(width: 2560, height: 1440,
+                                              originX: originX, originY: 0),
+                    transport: FixtureTransport(readings: readings),
+                    interCommandDelay: 0)
+        }
+        // id 1 centre, 2 left, 3 right -> layout map renders `2 1 3`.
+        return [make(id: 1, originX: 2560),
+                make(id: 2, originX: 0),
+                make(id: 3, originX: 5120)]
     }
 }
