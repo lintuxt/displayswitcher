@@ -3,10 +3,10 @@
 # GitHub Releases, verifies its SHA-256 checksum, and drops it on your PATH.
 #
 # Usage:
-#   curl -fsSL https://raw.githubusercontent.com/lintuxt/displayswitcher/main/install.sh | sh
+#   curl -fsSL https://raw.githubusercontent.com/lintuxt/displayswitcher/trunk/install.sh | sh
 #
 # Or manually:
-#   curl -fsSL https://raw.githubusercontent.com/lintuxt/displayswitcher/main/install.sh -o install-displayswitcher.sh
+#   curl -fsSL https://raw.githubusercontent.com/lintuxt/displayswitcher/trunk/install.sh -o install-displayswitcher.sh
 #   sh install-displayswitcher.sh
 #
 # No dependencies beyond standard macOS tooling (curl, tar, shasum, install).

@@ -83,7 +83,7 @@ struct DisplaySwitcherCommand: ParsableCommand {
             try Upgrade.runSync(
                 repo: "lintuxt/displayswitcher",
                 currentVersion: BuildInfo.version,
-                installerURL: "https://raw.githubusercontent.com/lintuxt/displayswitcher/main/install.sh")
+                installerURL: "https://raw.githubusercontent.com/lintuxt/displayswitcher/trunk/install.sh")
         case .get(let code):
             try runControl(code, on: try requireDisplay(), value: nil)
         case .set(let code, let value):
